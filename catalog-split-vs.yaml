@@ -1,0 +1,25 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: catalog-split
+spec:
+  hosts:
+    - catalog-service.cf-workloads.svc.cluster.local
+  http:
+  - match:
+    - headers:
+        cookie:
+          regex: "^(.*?;)?(\\s*)(logged_in=5ed869cfaddf8ba9caeddce8)(;.*)?$"
+    route:
+    - destination:
+        host: s-ac0bab01-23f2-4e66-9688-a61a4f3558cd.mesh.internal.hardt.io
+  - match:
+    - headers:
+        cookie:
+            regex: "^(.*?;)?(\\s*)(logged_in=5ed869cfaddf8ba9caeddce9)(;.*)?$"
+    route:
+    - destination:
+        host: s-f7f7af56-b9cf-4409-8fa7-428a3958eeed.mesh.internal.hardt.io
+  - route:
+    - destination:
+        host: s-574e9697-31c6-420b-a12c-853ba4e851cc.mesh.internal.hardt.io
