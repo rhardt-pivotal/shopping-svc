@@ -44,12 +44,18 @@
                     "username":username,
                     "password":password
                   }
-
+                  console.log("new login2...")
                   $.ajax({
                      url: "/login",
                      type: "POST",
                      async: false,
                      data: JSON.stringify(postvals),
+                     headers: {
+                      "Access-Control-Allow-Origin": "*"
+                     },
+                     xhrFields: {
+                      withCredentials: true,
+                     },
                      success: function (data, textStatus, jqXHR) {
                          console.log('data: '+ data);
                          console.log('posted: ' + textStatus);

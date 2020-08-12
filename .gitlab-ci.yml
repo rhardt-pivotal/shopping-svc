@@ -1,0 +1,9 @@
+stages:
+    - deploy
+deploy-catalog:
+    stage: deploy
+    image: rhardt/tmc
+    script:
+    - ./multi-deploy.sh
+    tags:
+    - k8s

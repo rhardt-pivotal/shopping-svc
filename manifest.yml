@@ -2,11 +2,11 @@
 applications:
 - name: shopping
   env:
-    USERS_HOST: users.mesh.internal.hardt.io
-    USERS_PORT: 8081
-    CATALOG_HOST: catalog-service
-    CATALOG_PORT: 8080
-    ORDER_HOST: order.mesh.internal.hardt.io
+    USERS_HOST: users.mesh.acme.internal.k10s.io
+    USERS_PORT: 8083
+    CATALOG_HOST: catalog.mesh.acme.internal.k10s.io
+    CATALOG_PORT: 8082
+    ORDER_HOST: order.mesh.acme.internal.k10s.io
     ORDER_PORT: 6000
-    CART_HOST: cart.mesh.internal.hardt.io
+    CART_HOST: cart.mesh.acme.internal.k10s.io
     CART_PORT: 5000

@@ -1,6 +1,6 @@
 
 // Returns the full name for a user based on userid
-function getUsername(userid, displayusername) {
+function  userid, displayusername) {
   console.log('Requesting user details from backend');
 
   $.ajax({
